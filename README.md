@@ -88,31 +88,43 @@ This is an educational project prototype. It is not a medical diagnostic tool an
 
 
 
+
+
 ```mermaid
 
 flowchart TD
 
-&#x20;   A\["Chest X-ray Dataset"] --> B\["train\_model.py"]
+&#x20;   A\[Chest X-ray Dataset] --> B\[Model Training]
 
-&#x20;   B --> C\["CNN Training - TensorFlow/Keras"]
+&#x20;   B --> C\[CNN - TensorFlow/Keras]
 
-&#x20;   C --> D\["pneumonia\_model.keras"]
+&#x20;   C --> D\[Trained Model]
 
-&#x20;   E\["User uploads X-ray"] --> F\["Streamlit app.py"]
+&#x20;   E\[User Uploads X-ray] --> F\[Streamlit Application]
 
 &#x20;   D --> F
 
-&#x20;   F --> G\["Resize image to 150x150"]
+&#x20;   F --> G\[Image Preprocessing]
 
-&#x20;   G --> H\["CNN Model Prediction"]
+&#x20;   G --> H\[AI Prediction]
 
-&#x20;   H --> I\["NORMAL"]
+&#x20;   H --> I\[NORMAL]
 
-&#x20;   H --> J\["PNEUMONIA"]
+&#x20;   H --> J\[PNEUMONIA]
 
-&#x20;   I --> K\["Display result and model score"]
+&#x20;   I --> K\[Display Result]
 
 &#x20;   J --> K
 
-```
+&#x20;   L\[Model Evaluation] --> M\[Accuracy, Precision, Recall, F1]
+## Application Screenshots
+
+### Home Page
+![Application Home Page](screenshots/home-page.png)
+
+### Pneumonia Prediction
+![Pneumonia Prediction](screenshots/pneumonia-result.png)
+
+### Normal Prediction
+![Normal Prediction](screenshots/normal-result.png)
 
