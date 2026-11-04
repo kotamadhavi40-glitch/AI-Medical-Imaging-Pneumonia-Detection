@@ -84,5 +84,35 @@ python -m streamlit run app.py
 
 This is an educational project prototype. It is not a medical diagnostic tool and must not be used for clinical decisions.
 
+\## Architecture Diagram
 
+
+
+```mermaid
+
+flowchart TD
+
+&#x20;   A\["Chest X-ray Dataset"] --> B\["train\_model.py"]
+
+&#x20;   B --> C\["CNN Training - TensorFlow/Keras"]
+
+&#x20;   C --> D\["pneumonia\_model.keras"]
+
+&#x20;   E\["User uploads X-ray"] --> F\["Streamlit app.py"]
+
+&#x20;   D --> F
+
+&#x20;   F --> G\["Resize image to 150x150"]
+
+&#x20;   G --> H\["CNN Model Prediction"]
+
+&#x20;   H --> I\["NORMAL"]
+
+&#x20;   H --> J\["PNEUMONIA"]
+
+&#x20;   I --> K\["Display result and model score"]
+
+&#x20;   J --> K
+
+```
 
