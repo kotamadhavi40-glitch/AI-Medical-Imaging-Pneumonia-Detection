@@ -87,36 +87,24 @@ This is an educational project prototype. It is not a medical diagnostic tool an
 \## Architecture Diagram
 
 
-
-
+## Architecture Diagram
 
 ```mermaid
-
 flowchart TD
+    A[Chest X-ray Dataset] --> B[Model Training]
+    B --> C[CNN - TensorFlow/Keras]
+    C --> D[Trained Model]
+    E[User Uploads X-ray] --> F[Streamlit Application]
+    D --> F
+    F --> G[Image Preprocessing]
+    G --> H[AI Prediction]
+    H --> I[NORMAL]
+    H --> J[PNEUMONIA]
+    I --> K[Display Result]
+    J --> K
+    L[Model Evaluation] --> M[Accuracy, Precision, Recall, F1]
+```
 
-&#x20;   A\[Chest X-ray Dataset] --> B\[Model Training]
-
-&#x20;   B --> C\[CNN - TensorFlow/Keras]
-
-&#x20;   C --> D\[Trained Model]
-
-&#x20;   E\[User Uploads X-ray] --> F\[Streamlit Application]
-
-&#x20;   D --> F
-
-&#x20;   F --> G\[Image Preprocessing]
-
-&#x20;   G --> H\[AI Prediction]
-
-&#x20;   H --> I\[NORMAL]
-
-&#x20;   H --> J\[PNEUMONIA]
-
-&#x20;   I --> K\[Display Result]
-
-&#x20;   J --> K
-
-&#x20;   L\[Model Evaluation] --> M\[Accuracy, Precision, Recall, F1]
 ## Application Screenshots
 
 ### Home Page
@@ -127,4 +115,3 @@ flowchart TD
 
 ### Normal Prediction
 ![Normal Prediction](screenshots/normal-result.png)
-
